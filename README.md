@@ -29,7 +29,7 @@ cd /Task-3
 bash run.sh
 ```
 This will 
- 1. Install Python dependency reportLab
+ 1. Install Python dependency ReportLab
  2. Generate two different input PDF files (file1.pdf, file2.pdf) using create_pdf.py
  3. Run the MD5 collision attack script (pdf.py)
  4. Output the MD5 and SHA-256 hashes of the collision files
