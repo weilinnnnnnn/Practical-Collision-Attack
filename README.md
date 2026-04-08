@@ -2,7 +2,7 @@
 
 # Task 2 Collision-generating Techniques
 ## Overview
-We are investigating the different types of collision-generating techniques. To do so, we demonstrate IPC using FastColl and UniColl, CPC using FastCPC and reusable collisions using formatting tricks using the precomputed examples from the corkami repository. These are built on top of HashClash by Marc Stevens (https://github.com/cr-marcstevens/hashclash) and corkami/collisions (https://github.com/corkami/collisions) by Ange ALbertini.
+We are investigating the different types of collision-generating techniques. To do so, we demonstrate IPC using FastColl and UniColl, CPC using FastCPC and reusable collisions using formatting tricks using the precomputed examples from the corkami repository. These are built on top of HashClash by Marc Stevens (https://github.com/cr-marcstevens/hashclash) and corkami/collisions (https://github.com/corkami/collisions) by Ange Albertini.
 
 ## Compilation and Installation
 ### Clone the repository 
@@ -50,6 +50,48 @@ sha256sum collision1.bin collision2.bin   # differ
 ```
 
 ### Chosen-Prefix Collisions
+We ran FastCPC as a demonstration
+```bash
+cd fcpc_run
+# "Hello, I am file A" > fcpc_prefix_a.bin
+# "Hello, I am file B" > fcpc_prefix_b.bin
+# Verify they are different
+md5sum fcpc_prefix_a.bin fcpc_prefix_b.bin
+```
+We started the RAM logger in a separate terminal
+``` bash
+while true; do
+    echo "=== $(date '+%H:%M:%S') ===" >> ram.log
+    top -l 1 -s 0 | grep PhysMem >> ram.log
+    ps aux | grep md5_ | grep -v grep >> ram.log
+    echo "" >> ram.log
+    sleep 30
+done
+```
+
+Running FastCPC
+``` bash
+# ../scripts/fastcpc.sh fcpc_prefix_a.bin fcpc_prefix_b.bin 2>&1 | tee cpc.log
+```
+
+Verify output
+``` bash
+md5sum file1_7.bin file2_7.bin # match
+sha256sum file1_7.bin file2_7.bin #differ
+```
+
+### Reusable Collisions using Formatting Tricks
+We used the precomputed prefix pairs for the JPG format from the corkami repository. The JPG script uses jpg1.bin and jpg2.bin, which are precomputed UniColl blocks already aligned with JPG's comment segment structure.
+``` bash
+cd rc_run
+time python3 jpg.py jpg1.bin jpg2.bin
+```
+
+To verify:
+``` bash
+md5sum collision1.jpg collision2.jpg # match
+sha256sum collision1.jpg collision2.jpg # differ
+```
 
 # Task 3 Unicoll Collision for PDF Files
 ## Overview
