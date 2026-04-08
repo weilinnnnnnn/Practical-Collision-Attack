@@ -16,7 +16,7 @@ apt update && apt install -y git python3 python3-pip
 ```
 ### Clone the repository 
 ```bash
-apt git clone https://github.com/weilinnnnnnn/Task-3
+git clone https://github.com/weilinnnnnnn/Task-3
 ```
 ### Build mutool 1.18
 ```bash
