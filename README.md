@@ -25,6 +25,7 @@ apt install -y wget && wget https://mupdf.com/downloads/archive/mupdf-1.18.0-sou
 ## Run the Collision 
 Run the shell script which handles everything
 ```bash
+cd /Task-3
 bash run.sh
 ```
 This will 
