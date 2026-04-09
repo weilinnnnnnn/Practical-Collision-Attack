@@ -12,6 +12,9 @@ git clone https://github.com/weilinnnnnnn/Practical-Collision-Attack
 ```
 
 ## Running the collisions
+```bash
+cd Task_2
+```
 ### Identical-Prefix Collisions
 #### FastColl
 ```bash
@@ -86,7 +89,7 @@ sha256sum file1_7.bin file2_7.bin #differ
 We used the precomputed prefix pairs for the JPG format from the corkami repository. The JPG script uses jpg1.bin and jpg2.bin, which are precomputed UniColl blocks already aligned with JPG's comment segment structure.
 ``` bash
 cd rc_run
-time python3 jpg.py jpg1.bin jpg2.bin
+time python3 jpg.py ImageA.jpg ImageB.jpg
 ```
 
 To verify:
