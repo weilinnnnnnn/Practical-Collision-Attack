@@ -162,17 +162,17 @@ python3 make_prefix.py
 ```
 
 ## Checking the Hashes
+### Convert .bin files to .txt by renaming file extension
+
 ### Verify hash of each file
 ```bash
-md5 collision1.bin collision2.bin
+md5 collision1.txt collision2.txt
 ```
 
 ### Show byte differences between files
 ```bash
-diff <(xxd collision1.bin) <(xxd collision2.bin)
+diff <(xxd collision1.txt) <(xxd collision2.txt)
 ```
-
-### Convert .bin files to .txt by renaming file extension
 
 This will 
  1. Generate one TXT file with the identical prefix (prefix.txt) using make_prefix.py
