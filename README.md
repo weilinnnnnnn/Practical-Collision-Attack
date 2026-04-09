@@ -3,7 +3,7 @@ Cryptographic hash functions are mathematical algorithms that map inputs of arbi
 
 # Task 2 Collision-generating Techniques
 ## Overview
-We are investigating the different types of collision-generating techniques. To do so, we demonstrate IPC using FastColl and UniColl, CPC using FastCPC and reusable collisions using formatting tricks using the precomputed examples from the corkami repository. These are built on top of HashClash by Marc Stevens (https://github.com/cr-marcstevens/hashclash) and corkami/collisions (https://github.com/corkami/collisions) by Ange Albertini.
+We are investigating the different types of collision-generating techniques. To do so, we demonstrate IPC using FastColl and UniColl, CPC using FastCPC and reusable collisions using formatting tricks using the precomputed examples from the corkami repository.
 
 ## Compilation and Installation
 ### Clone the repository 
@@ -97,6 +97,14 @@ To verify:
 md5sum collision1.jpg collision2.jpg # match
 sha256sum collision1.jpg collision2.jpg # differ
 ```
+
+## Credits
+These are built on top of HashClash by Marc Stevens (https://github.com/cr-marcstevens/hashclash) and corkami/collisions (https://github.com/corkami/collisions) by Ange Albertini
+- scripts (HashClash)
+- bin (corkami)
+- jpg.py (corkami)
+- jpg1.bin (corkami)
+- jpg2.bin (corkami)
 
 # Task 3 
 ## Overview
