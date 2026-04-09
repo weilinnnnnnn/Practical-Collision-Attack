@@ -1,4 +1,5 @@
 # Practical Collision Attacks
+Cryptographic hash functions are mathematical algorithms that map inputs of arbitrary size to a fixed-length sequence of characters, also known as a hash value or digest. The security of these applications depends on the assumption that it is computationally infeasible to generate two different inputs that map to the same hash, also known as collision resistance. However, this assumption has been eroded for certain hash functions such as MD5 (Message Digest Algorithm 5) and SHA-1(Secure Hash Algorithm 1), which were some of the most prevalent hash functions in the history of digital security. We will primarily focus on MD5 in this project.
 
 # Task 2 Collision-generating Techniques
 ## Overview
@@ -37,6 +38,7 @@ To verify:
 md5sum fastcoll1.bin fastcoll2.bin      # match
 sha256sum fastcoll1.bin fastcoll2.bin   # differ
 ```
+We display sha256 hashes to show that the content of the files are different
 
 #### UniColl
 ```bash
