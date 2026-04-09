@@ -21,7 +21,7 @@ def make_contract_pdf(filename, client, payment, label):
     story.append(Spacer(1, 0.2 * inch))
 
     data = [
-        ["Field", "Value"],
+        ["Field", ""],
         ["Document Type", "Housing Contract"],
         ["Client", client],
         ["Payment Amount", payment],
